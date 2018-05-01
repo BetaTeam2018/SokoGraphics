@@ -8,10 +8,12 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Scanner;
 
+import graphics.JMainMenu;
 import proto.Interpreter;
 import proto.MapLoader;
 import proto.Matrix;
-import proto.Menu;
+
+
 /**
  * 
  * A játékot irányító osztály ebben inicializálódik a minden a játékhoz szükséges adat
@@ -73,7 +75,10 @@ public class Game {
  * @param args
  */
 	public static void main(String[] args) {	//játék indítása
-		new Game().startGame();
+		//new Game().startGame();
+		//Menu menu = new Menu();
+		new JMainMenu();
+		
 	}
 
 	/**
@@ -86,8 +91,8 @@ public class Game {
 		boolean testExit = false;
 
 		while (mainMenulistNum != 0) {
-			Menu.printTestMenuList();
-			mainMenulistNum = Menu.readListNumber();			//a szükséges teszt számának beolvasása
+			//Menu.printTestMenuList();
+			//mainMenulistNum = Menu.readListNumber();			//a szükséges teszt számának beolvasása
 
 			testfile = "test_" + mainMenulistNum + ".txt";		//a fájl megnyitása majd az alaphelyzet kirajzolása
 			drawMap(testfile);
