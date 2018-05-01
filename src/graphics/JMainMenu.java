@@ -74,6 +74,7 @@ public class JMainMenu extends JFrame {
 							public void actionPerformed(ActionEvent e)
 							{
 								// TODO
+								new JNewGameMenu();
 							}
 						});
 		mainPanel.add(btnNewGame);
@@ -88,7 +89,8 @@ public class JMainMenu extends JFrame {
 								{
 									public void actionPerformed(ActionEvent e)
 									{
-										// TODO
+										// TODO: JNewGameMenu()
+										
 									}
 								});
 		mainPanel.add(btnLoadGame);
