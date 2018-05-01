@@ -14,16 +14,13 @@ import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 
 public class JMainMenu extends JFrame {
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;	
 	private final int width = 320;
 	private final int  height = 300;
-	
-	private final Dimension btnSize = new Dimension(200, 40);
-	private final int interval = btnSize.height + 20;			// Térköz a gombok között
-	private final int firstBtnYPos = 80;
 	
 	private JPanel mainPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sokoban");
@@ -38,6 +35,11 @@ public class JMainMenu extends JFrame {
 	 * Konstruktor: Menu ablak tualjdonságainak inicializálása
 	 */
 	public JMainMenu() {
+		final Dimension btnSize = new Dimension(200, 40);	// Gombok mérete
+		final int interval = btnSize.height + 20;			// Térköz a gombok között
+		final int titleYPos = 30;							// A cím elhelyezkedése
+		final int firstBtnYPos = titleYPos + 50;						// Az első gomb elhelyezkedése 						
+		
 		this.setTitle("Soko - Main Menu");
 		this.setSize(width, height);
 		this.setLocation(425, 100);
@@ -56,11 +58,11 @@ public class JMainMenu extends JFrame {
 		// Init the title label
 		lblTitle.setSize(300, 20);
 		lblTitle.setFont(SysLabelFontB);
-		lblTitle.setLocation(width/2 - 35, 30);
+		lblTitle.setLocation(width/2 - 35, titleYPos);
 		mainPanel.add(lblTitle);
 		
 		
-		int multiplier = 0;
+		int multiplier = 0;							// Szorzó, aminek értéke arányos a gombok számával
 		// Create and add the Border demo button
 		btnNewGame = new JButton("New Game");
 		btnNewGame.setSize(btnSize);
