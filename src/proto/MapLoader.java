@@ -1,9 +1,7 @@
 package proto;
 
 import game.*;
-import view.Drawable;
-import view.GFloor;
-import view.GPlayer;
+import view.*;
 
 import java.util.List;
 import java.io.InputStream;
@@ -105,7 +103,7 @@ public class MapLoader {
 		y = Integer.parseInt(sc.nextLine());
 		
 		for(int i=0; i<x*y; ++i) {			//a fieldek létrehozása
-			CreateField(sc.nextLine());
+			CreateField(sc.nextLine(), i%x, i/x);
 		}
 		
 		for(int i=0; i<switches.size(); ++i) {	//a TrapDoorok Switchekhez kötése
@@ -134,7 +132,7 @@ public class MapLoader {
 				GPlayer gp = new GPlayer();
 				gp.setPlayer(p);
 				gp.setZ(0);
-				drawables.add(gp);
+				drawables.add(gp);				
 				break;
 				
 			case "b"://Box
@@ -142,7 +140,10 @@ public class MapLoader {
 				b.setField(fields.get(Integer.parseInt(parts[1])));
 				b.getCurrentField().set(b);
 				
-				//GBox gb = new GBox();
+				GBox gb = new GBox();
+				gb.setBox(b);
+				gb.setZ(0);
+				drawables.add(gb);
 				break;
 		}
 	}
@@ -150,7 +151,7 @@ public class MapLoader {
 	 * Egy Field létrehozása a praméterben kapott adatokból
 	 * @param line az adatok String formában
 	 */
-	private void CreateField(String line) {
+	private void CreateField(String line,  int x, int y) {
 		Field f;
 		String[] parts = line.split(" ");
 		
@@ -162,13 +163,17 @@ public class MapLoader {
 				
 				GFloor gf = new GFloor();
 				gf.setZ(1);
-				gf.setFloor((Floor)f);
+				gf.setFloor((Floor)f);				
 				drawables.add(gf);
 				break;
 		
 			//hole
 			case "h":
-				f = new Hole(); 				
+				f = new Hole(); 
+				GHole gh = new GHole();
+				gh.setZ(1);
+				gh.setHole((Hole)f);				
+				drawables.add(gh);
 				break;
 			
 			//storage area
@@ -194,12 +199,19 @@ public class MapLoader {
 			
 			//wall
 			case "w":
-				f = new Wall();				
+				f = new Wall();	
+				
+				GWall gw = new GWall();
+				gw.setZ(1);
+				gw.setFloor((Wall)f);				
+				drawables.add(gw);
 				break;
 				
 			default:
 				f = null;
-		}		
+		}
+		
+		f.setPos(new Coordinate(x, y));
 		fields.add(f);
 	}
 	/**

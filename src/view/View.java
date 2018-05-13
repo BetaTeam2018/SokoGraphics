@@ -28,7 +28,7 @@ public class View implements Observer{
 	 * Előre betöltött képek.
 	 */
 	public static Map<String, BufferedImage> images = new HashMap<>();
-	public static final int blockSize = 50; //50px * 50px mezőméret
+	public static final int blockSize = 64; //64px * 64px mezőméret
 	
 	/**
 	 * Privát kép betöltő rutin.
@@ -42,12 +42,16 @@ public class View implements Observer{
 	 */
 	public View() {
 		
-		try {
-			loadImg("bin\\pictures\\floor.png");
+		try {			
 			images.put("floor", loadImg("bin\\pictures\\floor.png"));
+			images.put("wall", loadImg("bin\\pictures\\wall.png"));
+			images.put("hole", loadImg("bin\\pictures\\hole.png"));
 			
-			images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
-			images.put("box2", loadImg("bin\\pictures\\Box_2.png"));
+			/*images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
+			images.put("box2", loadImg("bin\\pictures\\Box_2.png"));*/
+			
+			images.put("box", loadImg("bin\\pictures\\Box.png"));
+			
 			
 			images.put("p2Up", loadImg("bin\\pictures\\Player2_UP.png"));			
 			images.put("p2Down", loadImg("bin\\pictures\\Player2_DOWN.png"));

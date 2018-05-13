@@ -21,6 +21,7 @@ public class JNewGameMenu extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private JFrame newGameMenu = this;
 	private JComboBox<String> levelsList = new JComboBox<String>();
 	private JButton btnStart;
 	private JPanel mainPanel = new JPanel();
@@ -69,7 +70,9 @@ public class JNewGameMenu extends JFrame {
 					{
 						
 				              //  new JGame().setVisible(true);
-						new JGame().setVisible(true);
+						JFrame jGame = new JGame();
+						jGame.setVisible(true);					
+						newGameMenu.dispose();
 						
 					}
 				});

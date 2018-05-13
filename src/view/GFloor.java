@@ -15,8 +15,7 @@ public class GFloor extends Drawable{
 	public void Draw(JPanel panel) {
 		Graphics2D g = (Graphics2D) panel.getGraphics();
 		BufferedImage img = View.images.get("floor");
-		//*floor.getPos().getX()  //*floor.getPos().getY()
-		g.drawImage(img, View.blockSize,  View.blockSize, null);
+		g.drawImage(img, View.blockSize*floor.getPos().getX(),  View.blockSize*floor.getPos().getY(), null);
 		
 	}
 	

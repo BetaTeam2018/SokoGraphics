@@ -22,6 +22,7 @@ public class JMainMenu extends JFrame {
 	private final int width = 320;
 	private final int  height = 300;
 	
+	JFrame menu = this;
 	private JPanel mainPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sokoban");
 	private JButton btnNewGame;
@@ -75,6 +76,7 @@ public class JMainMenu extends JFrame {
 							{
 								// TODO
 								new JNewGameMenu();
+								menu.dispose();
 							}
 						});
 		mainPanel.add(btnNewGame);
@@ -89,7 +91,7 @@ public class JMainMenu extends JFrame {
 								{
 									public void actionPerformed(ActionEvent e)
 									{
-										// TODO: JNewGameMenu()
+										
 										
 									}
 								});
@@ -104,7 +106,7 @@ public class JMainMenu extends JFrame {
 							new ActionListener()	
 							{
 									public void actionPerformed(ActionEvent e)	{
-										// TODO
+										
 									}
 									
 							});
