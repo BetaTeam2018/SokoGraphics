@@ -3,6 +3,9 @@ package controller;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
+
+import javax.swing.JPanel;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -39,7 +42,7 @@ public class Controller implements KeyListener{
 	List<Player> players;
 	
 	
-	public Controller(String mapPath) {
+	public Controller(String mapPath, JPanel panel) {
 		filePath = mapPath;
 				
 		InputStream is = null;
@@ -53,11 +56,17 @@ public class Controller implements KeyListener{
 		players = ml.getPlayers();
 		g.setMaze(ml.getFields());
 		v.set(ml.getDrawables()); 	//TODO v.set metódus még nincs implementálva
-
+		v.set(panel);
+		//v.update();
 		
-		for (Player p : players)					//játékosoknak a pálya átadása
-			p.setGame(g);		
+		for (Player p : players) {					//játékosoknak a pálya átadása
+			p.setGame(g);
+			p.register(v);	
+		}
 	}
+
+
+	
 
 
 	@Override
@@ -111,7 +120,7 @@ public class Controller implements KeyListener{
 				players.get(0).setFriction(Friction.HONEY);
 				break;
 			default:
-						// Érvénytelen bill.
+				// Érvénytelen bill.
 				break;
 }
 		

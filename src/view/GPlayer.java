@@ -35,7 +35,8 @@ public class GPlayer extends Drawable{
 				break;
 		}	
 		
-		g.drawImage(img, View.blockSize*player.getPos().getX(),  View.blockSize*player.getPos().getY(), null);
+		//*player.getPos().getX() //*player.getPos().getY()
+		g.drawImage(img, View.blockSize,  View.blockSize, null);
 	
 	}
 

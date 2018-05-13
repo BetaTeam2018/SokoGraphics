@@ -1,9 +1,8 @@
 package graphics;
-
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import controller.Controller;
 
 public class JGame extends JFrame {
 
@@ -11,10 +10,12 @@ public class JGame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel gameBoardPanel;
+	private JPanel gameBoardPanel = new JPanel();
 	
-	public JGame() {
-		
+	//TODO input fájl a menüben lévő comobox alapján
+	private Controller cnt;
+	
+	public JGame() {		
 
 		this.setTitle("Soko");
 		this.setSize(600, 600);
@@ -23,9 +24,11 @@ public class JGame extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);	
 		
 		
-		gameBoardPanel = new JPanel();
+		//gameBoardPanel 
 		gameBoardPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 		this.add(gameBoardPanel);
 		
+		cnt = new Controller("bin\\maps\\test.txt", gameBoardPanel);
+		this.addKeyListener(cnt);				
 	}
 }

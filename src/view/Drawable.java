@@ -30,9 +30,9 @@ public abstract class Drawable implements Comparable<Drawable>{
 	@Override
 	public int compareTo(Drawable another) {		
 		if(z < another.z)
-			return -1;
-		else if (z > another.z)
 			return 1;
+		else if (z > another.z)
+			return -1;
 		else 
 			return 0;
 	}		

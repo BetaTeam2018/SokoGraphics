@@ -116,7 +116,9 @@ public class Player extends Thing implements Observable{
 		lastStep = dir; // ha nem csúszik akkor is a lépés irányába kell nézzen
 		Field f = this.getCurrentField();
 		Field f2 = f.getNeighbor(dir);		
-		f2.pushHereBy(this, this, dir, strength);	
+		f2.pushHereBy(this, this, dir, strength);
+		
+		reportToObservers(); //redraw
 	}
 	
 	/**

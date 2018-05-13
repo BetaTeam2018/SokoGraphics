@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -26,7 +27,7 @@ public class View implements Observer{
 	/**
 	 * Előre betöltött képek.
 	 */
-	public static Map<String, BufferedImage> images;
+	public static Map<String, BufferedImage> images = new HashMap<>();
 	public static final int blockSize = 50; //50px * 50px mezőméret
 	
 	/**
@@ -42,7 +43,7 @@ public class View implements Observer{
 	public View() {
 		
 		try {
-			
+			loadImg("bin\\pictures\\floor.png");
 			images.put("floor", loadImg("bin\\pictures\\floor.png"));
 			
 			images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
