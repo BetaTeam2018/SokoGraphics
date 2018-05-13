@@ -82,5 +82,17 @@ public abstract class Thing {
 	public Field getCurrentField() {		
 		return currentField;
 	}
+	
+	/**
+	 * A thing pozíciója.
+	 * @return
+	 */
+	public Coordinate getPos() {
+		return currentField.getPos();
+	}
+
+	public void setPos(Coordinate pos) {
+		currentField.setPos(pos);
+	}
 		
 }

@@ -20,6 +20,12 @@ public abstract class Field {
 	 * a Fielden lévő Thing referenciája
 	 */
     private Thing thing;
+    
+    /**
+     * A Field pozíciója a játékban.
+     */
+    private Coordinate pos;
+    
     /**
      * a szomszéd Fieldek referenciái
      */
@@ -175,4 +181,12 @@ public abstract class Field {
     public Thing getThing() {
         return thing;
     }
+
+	public Coordinate getPos() {
+		return pos;
+	}
+
+	public void setPos(Coordinate pos) {
+		this.pos = pos;
+	}
 }

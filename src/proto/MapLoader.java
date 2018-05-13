@@ -62,7 +62,7 @@ public class MapLoader {
 	 * Visszaadja a Fieldeket egy 2D-s tömbben
 	 * @return a Fieldek egy 2D-s tömbben
 	 */
-	public Field[][] getFields() {
+	public List<Field> getFields() {
 		Field[][] f = new Field[y][x];
 		// y*x grid
 		for(int i=0; i<y; ++i) {
@@ -83,7 +83,13 @@ public class MapLoader {
 			}		
 		}
 				
-		return f;
+		List<Field> fields = new LinkedList<>();
+		for(int i=0; i<y; ++i) {
+			for(int j=0; j<x; ++j) {
+				fields.add(f[i][j]); 
+			}
+		}
+		return fields;
 	}
 
 	/**

@@ -26,6 +26,11 @@ public class Player extends Thing implements Observable{
 	List<Observer> observers = new LinkedList<>();
 	
 	/**
+	 * A játékos iránya. Alapértelmezetten felfelé néz.
+	 */
+	Direction lastStep = Direction.UP; 
+	
+	/**
 	 * A jelenlegi játék referenciája
 	 */
 	private Game game;
@@ -108,6 +113,7 @@ public class Player extends Thing implements Observable{
 	 * @param dir a megadott irány
 	 */
 	public void step(Direction dir) {
+		lastStep = dir; // ha nem csúszik akkor is a lépés irányába kell nézzen
 		Field f = this.getCurrentField();
 		Field f2 = f.getNeighbor(dir);		
 		f2.pushHereBy(this, this, dir, strength);	

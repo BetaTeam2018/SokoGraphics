@@ -1,6 +1,7 @@
 package game;
 
 /*import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -74,6 +75,18 @@ public class Game {
 	 */
 	public void endGame() {	
 		//TODO
+	}
+
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
+
+	public void setMaze(List<Field> maze) {
+		this.maze = maze;
 	}
 	
 
