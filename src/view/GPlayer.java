@@ -18,15 +18,25 @@ public class GPlayer extends Drawable{
 		Graphics2D g = (Graphics2D) panel.getGraphics();
 		BufferedImage img;
 		
+		Direction dir = player.getLastStep();
 		
-		if(player.getLastStep() == Direction.UP)
-			img = View.images.get("p1Up");
-		else
-			img = View.images.get("p1Down");
-			
-			//TODO left, right
+		switch(dir) {
+			case UP: 
+				img = View.images.get("p2Up");
+				break;
+			case  DOWN:
+				img = View.images.get("p2Down");
+				break;
+			case LEFT:
+				img = View.images.get("p2Left");
+				break;
+			default:
+				img = View.images.get("p2Right");
+				break;
+		}	
 		
 		g.drawImage(img, View.blockSize*player.getPos().getX(),  View.blockSize*player.getPos().getY(), null);
+	
 	}
 
 	public void setPlayer(Player player) {

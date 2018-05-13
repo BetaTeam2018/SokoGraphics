@@ -42,8 +42,16 @@ public class View implements Observer{
 	public View() {
 		
 		try {
+			
+			images.put("floor", loadImg("bin\\pictures\\floor.png"));
+			
 			images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
 			images.put("box2", loadImg("bin\\pictures\\Box_2.png"));
+			
+			images.put("p2Up", loadImg("bin\\pictures\\Player2_UP.png"));			
+			images.put("p2Down", loadImg("bin\\pictures\\Player2_DOWN.png"));
+			images.put("p2Left", loadImg("bin\\pictures\\Player2_LEFT.png"));			
+			images.put("p2Right", loadImg("bin\\pictures\\Player2_RIGHT.png"));
 			
 			//TODO a zössszst be köll olvasni
 			

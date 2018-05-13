@@ -2,6 +2,8 @@ package proto;
 
 import game.*;
 import view.Drawable;
+import view.GFloor;
+import view.GPlayer;
 
 import java.util.List;
 import java.io.InputStream;
@@ -24,6 +26,8 @@ public class MapLoader {
 	 * a pálya méretei
 	 */
 	private int x, y;
+	
+	private List<Drawable> drawables = new LinkedList<>();
 	/**
 	 * a pályaelemek listája
 	 */
@@ -54,8 +58,7 @@ public class MapLoader {
 	 * @return
 	 */
 	public List<Drawable> getDrawables(){
-		return null; //TODO implementátlatlan metódus
-		
+		return drawables; //A drawables lista feltötlése még nem teljes		
 	}
 	
 	/**
@@ -126,13 +129,20 @@ public class MapLoader {
 				p.setField(fields.get(Integer.parseInt(parts[1])));
 				p.setStrength(Integer.parseInt(parts[2]));
 				p.getCurrentField().set(p);
-				players.add(p);				
+				players.add(p);
+				
+				GPlayer gp = new GPlayer();
+				gp.setPlayer(p);
+				gp.setZ(0);
+				drawables.add(gp);
 				break;
 				
 			case "b"://Box
 				Box b = new Box();
 				b.setField(fields.get(Integer.parseInt(parts[1])));
 				b.getCurrentField().set(b);
+				
+				//GBox gb = new GBox();
 				break;
 		}
 	}
@@ -149,6 +159,11 @@ public class MapLoader {
 			case "f":
 				f = new Floor();
 				friction(f, parts[2]);
+				
+				GFloor gf = new GFloor();
+				gf.setZ(1);
+				gf.setFloor((Floor)f);
+				drawables.add(gf);
 				break;
 		
 			//hole
