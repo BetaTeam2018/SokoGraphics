@@ -7,22 +7,34 @@ import javax.swing.JPanel;
 import observerPattern.Observable;
 import observerPattern.Observer;
 
-public class View implements Observable{
+public class View implements Observer{
 	/**
 	 * A panel mely vászonként szolgál
 	 */
 	private JPanel canvas;
 	
+
 	/**
 	 * A rajzolható objektumokat tartalmazza.
 	 */
-	List<Drawable> drawables = new LinkedList<>();
+	private List<Drawable> drawables = new LinkedList<>();	
+	
 	
 	/**
-	 * Az értesítendő objektumokat tárolja
+	 * Rajzolható objektum lista átadása.
+	 * @param list
 	 */
-	List<Observer> observers = new LinkedList<>();
+	public void set(List<Drawable> list) {
+		drawables = list;
+	}
 	
+	/**
+	 * A jpanel átadása. Ide fogja rajzolni a kimenetet.
+	 * @param panel
+	 */
+	public void set(JPanel panel) {
+		canvas = panel;
+	}
 	
 	/**
 	 *  Kirajzolja az összes drawable-t.
@@ -32,33 +44,14 @@ public class View implements Observable{
 			drawable.Draw(canvas);
 		}
 	}
-	
-	/**
-	 * Jelenttések elküldése
-	 */
-	@Override
-	public void reportToObservers() {
-		for (Observer obs : observers) {
-			obs.report(this);
-		}
 		
-	}
 	
 	/**
-	 * Megfigyelő feljelelentkeztetése. Többszörös feljelentkezés nem lehetséges.
+	 * A megfigyelt objektumoktól kapott értesítés.
 	 */
 	@Override
-	public void register(Observer obs) {
-		if(! observers.contains(obs))		//csak ha még nincs benne
-			observers.add(obs);
-	}
-
-	/**
-	 * Megfigyelő lejelentkeztetése.
-	 */
-	@Override
-	public void unregister(Observer obs) {
-		observers.remove(obs);		
+	public void report(Observable o) {
+		update();		
 	}
 	
 }

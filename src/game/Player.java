@@ -6,11 +6,25 @@
 */
 
 package game;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import observerPattern.Observable;
+import observerPattern.Observer;
+
+
 /**
  * A játékos reprezentációja a játékban
  *
  */
-public class Player extends Thing {
+public class Player extends Thing implements Observable{
+		
+	/**
+	 * Az értesítendő objektumokat tárolja
+	 */
+	List<Observer> observers = new LinkedList<>();
+	
 	/**
 	 * A jelenlegi játék referenciája
 	 */
@@ -165,5 +179,34 @@ public class Player extends Thing {
 	public void changeFriction(Friction fr)		//A Field súrlódásának megváltoztatása amin a Player van
 	{
 		this.getCurrentField().setFriction(fr);
+	}
+	
+	
+	/**
+	 * Jelenttések elküldése
+	 */
+	@Override
+	public void reportToObservers() {
+		for (Observer obs : observers) {
+			obs.report(this);
+		}
+		
+	}
+	
+	/**
+	 * Megfigyelő feljelelentkeztetése. Többszörös feljelentkezés nem lehetséges.
+	 */
+	@Override
+	public void register(Observer obs) {
+		if(! observers.contains(obs))		//csak ha még nincs benne
+			observers.add(obs);
+	}
+
+	/**
+	 * Megfigyelő lejelentkeztetése.
+	 */
+	@Override
+	public void unregister(Observer obs) {
+		observers.remove(obs);		
 	}
 }

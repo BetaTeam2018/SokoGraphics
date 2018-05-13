@@ -1,6 +1,8 @@
 package proto;
 
 import game.*;
+import view.Drawable;
+
 import java.util.List;
 import java.io.InputStream;
 import java.util.LinkedList;
@@ -9,6 +11,10 @@ import java.util.Scanner;
  * pálya betöltésért felelős osztály
  *
  */
+
+
+
+//TODO új változat, vagy átalakítások szükségesek.
 public class MapLoader {
 	/**
 	 * Scanner amivel a bemenetről olvasunk
@@ -41,6 +47,17 @@ public class MapLoader {
 	public List<Player> getPlayers() {
 		return players;
 	}
+	
+	
+	/**
+	 * Előállítja a rajzolható objektumok listáját
+	 * @return
+	 */
+	public List<Drawable> getDrawables(){
+		return null; //TODO implementátlatlan metódus
+		
+	}
+	
 	/**
 	 * Visszaadja a Fieldeket egy 2D-s tömbben
 	 * @return a Fieldek egy 2D-s tömbben

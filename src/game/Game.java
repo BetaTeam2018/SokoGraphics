@@ -1,17 +1,15 @@
 package game;
 
-import java.io.File;
+/*import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Scanner;
-
-import graphics.JMainMenu;
 import proto.Interpreter;
 import proto.MapLoader;
-import proto.Matrix;
+import graphics.JMainMenu; 
+import proto.Matrix;*/
+import java.util.List;
 
 
 /**
@@ -21,31 +19,35 @@ import proto.Matrix;
  */
 public class Game {
 	/**
-	 * az adott pálya mátrixa
-	 */
-	private Field[][] map;
+	 * az adott pálya mezői
+	 */	
+	private List<Field> maze; //TODO csere generikus kollekcóra
+	//private Field[][] map; 
+	
 	/**
 	 * a pályán lévő játékosok listája
 	 */
-	private List<Player> players;
+	private List<Player> players;	
+	
+	
 	/**
 	 * Scanner objektum amelynek segítségével a bementről olvasunk
 	 */
-	private Scanner sc = new Scanner(System.in);
+	//private Scanner sc = new Scanner(System.in);
 
 	/**
 	 * elindítja a játékot
 	 */
 	public void startGame() {
-		
-		this.gameMainLoop();
+		//TODO
+		//this.gameMainLoop();
 	}
 
 	/**
 	 * pálya kirajzoló, paraméterként megkapja a pályát tartalmazó fájl nevét
 	 * @param testFilename a pályát tartalmazó fájl neve
 	 */
-	public void drawMap(String testFilename) {	
+	/*public void drawMap(String testFilename) {	
 		MapLoader ml = new MapLoader();
 		InputStream is = null;
 		try {
@@ -64,27 +66,21 @@ public class Game {
 
 		mat.Draw(System.out, map);				//pálya kirajzolása
 
-	}
+	}*/
 
 	/**
+	 * Játékos halálakor hívódik.
 	 * a játék befejezésekor végrehajtandó műveleteket végzi el
 	 */
-	public void endGame() {	}
-/**
- * main függvény, ahonnan a program indul, elindít egy játékot
- * @param args
- */
-	public static void main(String[] args) {	//játék indítása
-		//new Game().startGame();
-		//Menu menu = new Menu();
-		new JMainMenu();
-		
+	public void endGame() {	
+		//TODO
 	}
+	
 
 	/**
 	 * ebben a függvényben lehet kiválasztani a tesztesetet és lefuttatni azokat
 	 */
-	public void gameMainLoop() {
+	/*public void gameMainLoop() {
 
 		String testfile = "";
 		int mainMenulistNum = -1;								//szükséges változók
@@ -113,16 +109,16 @@ public class Game {
 			}
 		}
 
-	}
+	}*/
 
 
 
 	/**
 	 * bezárja a Scannert ha nem került volna sor rá
 	 */
-	@Override
+	/*@Override
 	protected void finalize() {
 		sc.close();
-	}
+	}*/
 
 }
