@@ -28,7 +28,7 @@ public class Player extends Thing implements Observable{
 	/**
 	 * A játékos iránya. Alapértelmezetten felfelé néz.
 	 */
-	Direction lastStep = Direction.UP; 
+	private Direction lastStep = Direction.UP; 
 	
 	/**
 	 * A jelenlegi játék referenciája
@@ -219,5 +219,8 @@ public class Player extends Thing implements Observable{
 	public void setFriction(Friction fr) {
 		if(getCurrentField() != null)
 			getCurrentField().setFriction(fr);
+	}
+	public Direction getLastStep() {
+		return lastStep;
 	}
 }

@@ -1,7 +1,12 @@
 package view;
-
+import java.util.Map;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import observerPattern.Observable;
@@ -17,7 +22,39 @@ public class View implements Observer{
 	 * A rajzolható objektumokat tartalmazza.
 	 */
 	private List<Drawable> drawables;	
+	
+	/**
+	 * Előre betöltött képek.
+	 */
+	public static Map<String, BufferedImage> images;
+	public static final int blockSize = 50; //50px * 50px mezőméret
+	
+	/**
+	 * Privát kép betöltő rutin.
+	 */
+	private BufferedImage loadImg(String path) throws IOException {
+		return ImageIO.read(new File(path));			
+	}
+	
+	/**
+	 * A konstruktorban töltődnek be a képek.
+	 */
+	public View() {
 		
+		try {
+			images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
+			images.put("box2", loadImg("bin\\pictures\\Box_2.png"));
+			
+			//TODO a zössszst be köll olvasni
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 	/**
 	 * Rajzolható objektum lista átadása.
 	 * @param list
