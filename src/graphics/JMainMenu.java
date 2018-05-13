@@ -110,5 +110,15 @@ public class JMainMenu extends JFrame {
 							});
 		mainPanel.add(btnExit);
 		
+		
 	}
+	
+	 public static void main(String args[]) {
+	       
+	                java.awt.EventQueue.invokeLater(new Runnable() {
+	                    public void run() {
+	                         new JMainMenu().setVisible(true);
+	                    }
+	                });       
+	    }
 }
