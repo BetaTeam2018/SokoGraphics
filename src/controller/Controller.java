@@ -63,41 +63,53 @@ public class Controller implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
-		int keyCode = e.getKeyCode();			
+		int keyCode = e.getKeyCode();		
 		
 		switch(keyCode) {
 			case KeyEvent.VK_UP:
-				
+				players.get(0).step(Direction.UP);
 				break;
 			
 			case KeyEvent.VK_DOWN:
-				
+				players.get(0).step(Direction.DOWN);
 				break;
 			
 			case KeyEvent.VK_LEFT:
-				
+				players.get(0).step(Direction.LEFT);
 				break;
 				
 			case KeyEvent.VK_RIGHT:
-				
+				players.get(0).step(Direction.RIGHT);
 				break;
 			
 			case KeyEvent.VK_W:
-				
+				players.get(1).step(Direction.UP);
 				break;
 				
 			case KeyEvent.VK_S:
-				
+				players.get(1).step(Direction.DOWN);
 				break;
 				
 			case KeyEvent.VK_A:
-				
+				players.get(1).step(Direction.LEFT);
 				break;
 				
 			case KeyEvent.VK_D:
-				
+				players.get(1).step(Direction.RIGHT);
 				break;
 				
+			//Player0 alatti padló súrlódása
+			case KeyEvent.VK_0:
+				players.get(0).setFriction(Friction.OIL);
+				break;
+				
+			case KeyEvent.VK_1:
+				players.get(0).setFriction(Friction.NORMAL);
+				break;
+				
+			case KeyEvent.VK_2:
+				players.get(0).setFriction(Friction.HONEY);
+				break;
 			default:
 						// Érvénytelen bill.
 				break;
