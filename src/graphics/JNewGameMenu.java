@@ -21,7 +21,7 @@ public class JNewGameMenu extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private JComboBox<String> levelsList = new JComboBox();
+	private JComboBox<String> levelsList = new JComboBox<String>();
 	private JButton btnStart;
 	private JPanel mainPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("New Game");
@@ -56,7 +56,7 @@ public class JNewGameMenu extends JFrame {
 		lblTitle.setLocation(width/2 - 50, 30);
 		mainPanel.add(lblTitle);
 		
-		int multiplier = 0;									// Szorzó, aminek értéke arányos a gombok számával
+		
 		// Create and add the Border demo button
 		btnStart = new JButton("START");
 		btnStart.setSize(btnSize);
@@ -67,8 +67,10 @@ public class JNewGameMenu extends JFrame {
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-										// TODO
-										//new JNewGameMenu();
+						
+				              //  new JGame().setVisible(true);
+						new JGame().setVisible(true);
+						
 					}
 				});
 		mainPanel.add(btnStart);
@@ -84,7 +86,7 @@ public class JNewGameMenu extends JFrame {
 					public void actionPerformed(ActionEvent e)
 					{
 										// TODO
-										//new JNewGameMenu();
+										
 					}
 				});
 		levelsList.addItem("Level 1");
