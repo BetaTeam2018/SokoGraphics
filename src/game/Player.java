@@ -215,4 +215,9 @@ public class Player extends Thing implements Observable{
 	public void unregister(Observer obs) {
 		observers.remove(obs);		
 	}
+	
+	public void setFriction(Friction fr) {
+		if(getCurrentField() != null)
+			getCurrentField().setFriction(fr);
+	}
 }

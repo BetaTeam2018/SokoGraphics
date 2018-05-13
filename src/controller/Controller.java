@@ -129,6 +129,9 @@ public class Controller implements KeyListener{
 		
 	}
 	
+	public View getView() {
+		return v;
+	}
 
 	
 	
