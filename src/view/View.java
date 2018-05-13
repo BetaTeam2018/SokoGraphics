@@ -1,6 +1,6 @@
 package view;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JPanel;
 
@@ -13,23 +13,22 @@ public class View implements Observer{
 	 */
 	private JPanel canvas;
 	
-
 	/**
 	 * A rajzolható objektumokat tartalmazza.
 	 */
-	private List<Drawable> drawables = new LinkedList<>();	
-	
-	
+	private List<Drawable> drawables;	
+		
 	/**
 	 * Rajzolható objektum lista átadása.
 	 * @param list
 	 */
 	public void set(List<Drawable> list) {
 		drawables = list;
+		Collections.sort(drawables); // rendezzés rajzolási sorrend szerint
 	}
 	
 	/**
-	 * A jpanel átadása. Ide fogja rajzolni a kimenetet.
+	 * A JPanel átadása. Ide fog rajzolni.
 	 * @param panel
 	 */
 	public void set(JPanel panel) {
