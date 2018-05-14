@@ -63,6 +63,7 @@ public class Controller implements KeyListener{
 			p.setGame(g);
 			p.register(v);	
 		}
+		//v.update();
 	}
 
 
@@ -71,9 +72,13 @@ public class Controller implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
+		boolean deadPlayer=false;
+		for (int i=0;i<players.size();i++)
+		{
+			if(players.get(i).getCurrentField()==null)
+				deadPlayer=true;
+		}
 		int keyCode = e.getKeyCode();		
-		
 		switch(keyCode) {
 		
 		//PLAYER0 wasd / 123

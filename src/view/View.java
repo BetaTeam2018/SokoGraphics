@@ -42,32 +42,25 @@ public class View implements Observer{
 	 */
 	public View() {
 		
-		try {
+		try {			
+			images.put("floor", loadImg("bin\\pictures\\floor.png"));
+			images.put("wall", loadImg("bin\\pictures\\wall.png"));
+			images.put("hole", loadImg("bin\\pictures\\hole.png"));
+			
+			/*images.put("box1", loadImg("bin\\pictures\\Box_1.png"));			
+			images.put("box2", loadImg("bin\\pictures\\Box_2.png"));*/
 			
 			images.put("box", loadImg("bin\\pictures\\Box.png"));
-			images.put("floor", loadImg("bin\\pictures\\floor.png"));			
-			images.put("hole", loadImg("bin\\pictures\\hole.png"));
-			images.put("hFloor", loadImg("bin\\pictures\\HoneyFloor.png"));
-			images.put("oFloor", loadImg("bin\\pictures\\OilFloor.png"));
-			images.put("placedBox", loadImg("bin\\pictures\\PlacedBox.png"));			
+			images.put("placedBox", loadImg("bin\\pictures\\PlacedBox.png"));
 			
-			images.put("p1Up", loadImg("bin\\pictures\\Player1_UP.png"));			
-			images.put("p1Down", loadImg("bin\\pictures\\Player1_DOWN.png"));
-			images.put("p1Left", loadImg("bin\\pictures\\Player1_LEFT.png"));			
-			images.put("p1Right", loadImg("bin\\pictures\\Player1_RIGHT.png"));
 			
 			images.put("p2Up", loadImg("bin\\pictures\\Player2_UP.png"));			
 			images.put("p2Down", loadImg("bin\\pictures\\Player2_DOWN.png"));
 			images.put("p2Left", loadImg("bin\\pictures\\Player2_LEFT.png"));			
 			images.put("p2Right", loadImg("bin\\pictures\\Player2_RIGHT.png"));
 			
+			//TODO a zössszst be köll olvasni
 			
-			images.put("sArea", loadImg("bin\\pictures\\StorageAgeArea.png"));
-			images.put("swON", loadImg("bin\\pictures\\SwitchOn.png"));
-			images.put("swOF", loadImg("bin\\pictures\\SwitchOff.png"));
-			images.put("trap", loadImg("bin\\pictures\\trapdoor.png"));
-			
-			images.put("wall", loadImg("bin\\pictures\\wall.png"));		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

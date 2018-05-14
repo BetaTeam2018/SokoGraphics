@@ -25,7 +25,7 @@ public class JGame extends JFrame {
 		//gameBoardPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 		this.add(gameBoardPanel);
 		
-		cnt = new Controller("maps\\test.txt", gameBoardPanel);
+		cnt = new Controller("bin\\maps\\test.txt", gameBoardPanel);
 		this.addKeyListener(cnt);
 	}
 }
