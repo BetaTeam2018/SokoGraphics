@@ -12,10 +12,16 @@ public class GBox extends Drawable{
 	
 	@Override
 	public void Draw(JPanel panel) {
+		if(box.getCurrentField()!=null)
+		{
 		Graphics2D g = (Graphics2D) panel.getGraphics();
-		BufferedImage img = View.images.get("box");
-		if(box.getCurrentField() != null)
-			g.drawImage(img, View.blockSize*box.getPos().getX(),  View.blockSize*box.getPos().getY(), null);		
+		BufferedImage img;
+		if(box.getOnStorageArea()==false)
+			img = View.images.get("box");
+		else
+			img = View.images.get("box");
+		g.drawImage(img, View.blockSize*box.getPos().getX(),  View.blockSize*box.getPos().getY(), null);		
+		}
 	}
 	
 	public void setBox(Box box){

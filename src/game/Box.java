@@ -12,6 +12,14 @@ package game;
  */
 public class Box extends Thing {
 	
+	private boolean onStorageArea;
+	
+	
+	public Box()
+	{
+		super();
+		onStorageArea=false;
+	}
 	/**
 	 * Akkor hívódikmeg ha Boxot el akarják tolni, meghívja a következő field getPushHereBy-ját
 	 * @param pusher Player referenciája aki tolja
@@ -51,6 +59,12 @@ public class Box extends Thing {
 	@Override
 	public String MatrixElement() {				//kirajzolás a konzolra
 		return "■";
+	}
+	public boolean getOnStorageArea() {
+		return onStorageArea;
+	}
+	public void setOnStorageArea(boolean onStorageArea) {
+		this.onStorageArea = onStorageArea;
 	}
 
 }

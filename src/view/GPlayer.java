@@ -15,6 +15,8 @@ public class GPlayer extends Drawable{
 	
 	@Override
 	public void Draw(JPanel panel) {
+		if(player.getCurrentField()!=null)
+		{
 		Graphics2D g = (Graphics2D) panel.getGraphics();
 		BufferedImage img;
 		
@@ -34,9 +36,9 @@ public class GPlayer extends Drawable{
 				img = View.images.get("p2Right");
 				break;
 		}	
-		if(player.getCurrentField() != null)
-			g.drawImage(img, View.blockSize*player.getPos().getX(),  View.blockSize*player.getPos().getY(), null);
-	
+		
+		g.drawImage(img, View.blockSize*player.getPos().getX(),  View.blockSize*player.getPos().getY(), null);
+		}
 	}
 
 	public void setPlayer(Player player) {
