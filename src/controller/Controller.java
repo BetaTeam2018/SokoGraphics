@@ -122,15 +122,15 @@ public class Controller implements KeyListener{
 				players.get(1).step(Direction.RIGHT);
 				break;
 				
-			case KeyEvent.VK_0:
+			case KeyEvent.VK_1:
 				players.get(1).setFriction(Friction.OIL);
 				break;
 				
-			case KeyEvent.VK_1:
+			case KeyEvent.VK_2:
 				players.get(1).setFriction(Friction.NORMAL);
 				break;
 				
-			case KeyEvent.VK_2:
+			case KeyEvent.VK_3:
 				players.get(1).setFriction(Friction.HONEY);
 				break;
 						

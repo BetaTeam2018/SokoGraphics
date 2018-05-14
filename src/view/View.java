@@ -64,7 +64,7 @@ public class View implements Observer{
 			
 			images.put("sArea", loadImg("bin\\pictures\\StoreAgeArea.png"));
 			images.put("swON", loadImg("bin\\pictures\\SwitchOn.png"));
-			images.put("swOF", loadImg("bin\\pictures\\SwitchOff.png"));
+			images.put("swOFF", loadImg("bin\\pictures\\SwitchOff.png"));
 			images.put("trap", loadImg("bin\\pictures\\trapdoor.png"));
 			
 			images.put("wall", loadImg("bin\\pictures\\wall.png"));		
