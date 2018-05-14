@@ -14,7 +14,6 @@ public class GBox extends Drawable{
 	public void Draw(JPanel panel) {
 		Graphics2D g = (Graphics2D) panel.getGraphics();
 		BufferedImage img = View.images.get("box");
-		
 		if(box.getCurrentField() != null)
 			g.drawImage(img, View.blockSize*box.getPos().getX(),  View.blockSize*box.getPos().getY(), null);		
 	}

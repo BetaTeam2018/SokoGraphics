@@ -180,11 +180,6 @@ public class MapLoader {
 			case "a":
 				f = new StoreageArea();
 				friction(f, parts[2]);
-				
-				GStoreageArea gsa = new GStoreageArea();
-				gsa.setZ(1);
-				gsa.setStorageArea((StoreageArea) f);				
-				drawables.add(gsa);
 				break;
 				
 			//switch
@@ -193,21 +188,13 @@ public class MapLoader {
 				friction(s, parts[2]);
 				switches.add(s);
 				trapdoorIdx.add(Integer.parseInt(parts[3]));
-				f = s;				
-				GSwitch gs = new GSwitch();
-				gs.setZ(1);
-				gs.setSwitch((Switch) f);				
-				drawables.add(gs);
+				f = s;
 				break;
 				
 			//trapdoor
 			case "t":
 				f = new TrapDoor();
 				friction(f, parts[2]);
-				GTrapDoor gt = new GTrapDoor();
-				gt.setZ(1);
-				gt.setTrapDoor((TrapDoor) f);				
-				drawables.add(gt);
 				break;
 			
 			//wall
