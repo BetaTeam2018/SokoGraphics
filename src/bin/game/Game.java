@@ -12,6 +12,8 @@ import graphics.JMainMenu;
 import proto.Matrix;*/
 import java.util.List;
 
+import graphics.JGameOver;
+
 
 /**
  * 

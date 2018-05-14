@@ -54,6 +54,7 @@ public class Switch extends Floor {
 	public void set(Box b) {
 		super.set(b);
 		td.open();
+		b.setOnStorageArea(true);
 	}
 	
 	/**
@@ -64,6 +65,7 @@ public class Switch extends Floor {
 	public void remove(Box b) {
 		super.remove(b);
 		td.close();
+		b.setOnStorageArea(false);
 	}
 	/**
 	 * kiiratáshoz szükséges

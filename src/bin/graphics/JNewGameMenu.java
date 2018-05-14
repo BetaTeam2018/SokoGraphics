@@ -68,8 +68,6 @@ public class JNewGameMenu extends JFrame {
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						
-				              //  new JGame().setVisible(true);
 						JFrame jGame = new JGame();
 						jGame.setVisible(true);					
 						newGameMenu.dispose();

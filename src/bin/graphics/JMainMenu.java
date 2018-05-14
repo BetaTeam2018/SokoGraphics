@@ -121,6 +121,6 @@ public class JMainMenu extends JFrame {
 	                    public void run() {
 	                         new JMainMenu().setVisible(true);
 	                    }
-	                });       
+	                });  
 	    }
 }
